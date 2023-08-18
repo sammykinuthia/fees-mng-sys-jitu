@@ -1,0 +1,14 @@
+
+
+#GET all students
+GET http://localhost:3030/students
+
+### create student
+POST http://localhost:3030/students
+Content-Type: application/json
+
+{
+    "name":"Samuel Mwaniki",
+    "studentClass":"3 kilimanjaro",
+    "fees":20000
+}

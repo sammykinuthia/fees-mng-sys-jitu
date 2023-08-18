@@ -34,11 +34,18 @@ describe("students",()=>{
     })
 
     it("Should update fees for single student with id", async()=>{
-        const res = await (await request(app).post("/students")).body({id, fees})
+        const id = "djshdjsd"
+        const fees = 2000.00
+        const res = await request(app).post("/students").send({id,fees})
         expect(res.status).toBe(200)
         expect(res.body.message).toBe("Record updated successifully")
     })
 
 
+    it("Should delete a single student with id", async()=>{
+        const res = await request(app).post("/students/hajhdaha")
+        expect(res.status).toBe(200)
+        expect(res.body.message).toBe("Record deleted successifully")
+    })
 
 })
